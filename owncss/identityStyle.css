@@ -1,0 +1,295 @@
+.popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+    display: none;
+}
+.filterForm {
+    height: 742px;
+    background-color: #fff;
+    box-shadow: 0px 4px 30px rgb(0 0 0 / 25%);
+    border-radius: 0px 8px 8px 0px;
+    box-sizing: border-box;
+    position: absolute;
+    left: -385px;
+    top: 0;
+    z-index: 1030;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+.activeFilterForm {
+    left: 0;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+.filterHeadText {
+    font-size: 14px;
+    font-weight: 600;
+}
+.formFieldName {
+    font-size: 11px;
+    line-height: 16px;
+}
+.currentBrudGrum {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0094FD;
+}
+.db-Path {
+    font-size: 12px;
+    margin-right: -1px;
+}
+.filterOuterBox {
+    height: 48px;
+    background-color: #F8F8F8;
+}
+.filterSearchIcon {
+    top: 7px;
+    left: 4px;
+}
+.filterText {
+    font-size: 12px;
+}
+.filterSearchInput {
+    border: none;
+    background: transparent;
+    height: 32px;
+}
+.filterSearchInput:focus {
+    outline: 1px solid #d1d1d1;
+}
+.filterSearchInput::placeholder {
+    color: #000;
+    font-size: 14px;
+}
+.tableHead,.tableBody {
+    height: 16px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.tableBody {
+    font-weight: 400;
+    height: 72px;
+    border: 1px solid #DFDFDF;
+}
+.square {
+    height: 32px;
+    width: 32px;
+    background-color: #FDF3BD;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -10px;
+}
+.square::before {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 12px solid #FDF3BD;
+}
+.level4 {
+    background-color: #FFE3C9;
+}
+.level4::before {
+    border-top: 12px solid #FFE3C9;
+}
+.level5 {
+    background-color: #FDF3BD;
+}
+.level5::before {
+    border-top: 12px solid #FDF3BD;
+}
+.level6 {
+    background-color: #D7FFB8;
+}
+.level6::before {
+    border-top: 12px solid #D7FFB8;
+}
+.level7 {
+    background-color: #B4F3EF;
+}
+.level7::before {
+    border-top: 12px solid #B4F3EF;
+}
+.editDeleteBox{
+    position: absolute;
+    top: -65px;
+    left: 13px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 32px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    display: none;
+}
+.actionField:hover .editDeleteBox {
+    display: block;
+}
+.falseField {
+    color: #FF3D3D;
+}
+.trueField {
+    color: #69C536;
+}
+.pagination a {
+    color: black;
+    float: left;
+    height: 32px;
+    width: 32px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #DFDFDF;
+    line-height: 32px;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
+.pagination a.active {
+    color: #4200FF;
+    border: 1px solid #0094FD;
+  }
+.previousBtn {
+    background-color: #CCCCCC;
+    position: relative;
+}
+.previousIcon {
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 12px;
+    left: 14px;
+}
+.nextBtn {
+    position: relative;
+    margin-right: 0;
+}
+.nextIcon {
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid #DFDFDF;
+    border-bottom: 2px solid #DFDFDF;
+    transform: rotate(226deg);
+    position: absolute;
+    top: 12px;
+    left: 11px;
+}
+.floatingDashboardIcon {
+    background-image: url(../images/Floating\ Dashboard\ Icon.svg);
+}
+.closeDashboardBtn {
+    top: 0;
+    right: 0;
+}
+.uncheckedType2 {
+    background: url(../images/Unchecked\ Icon.svg) no-repeat center center;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.checkbox:checked + .uncheckedType2 {
+    background: url(../images/Checked\ Icon.svg) no-repeat center center;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.addIdentityForm {
+    border-radius: 8px;
+    background-color: #fff;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 24px;
+    z-index: 1030;
+    top: -2000px;
+    left: 0;
+    right: 0;
+    height: auto;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+.activeIdentityForm {
+    top: 30px;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+p.errorMsg {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: #f00;
+}
+.edit-Popup {
+    height: 437px;
+    border-radius: 8px;
+    background-color: white;
+    position: absolute;
+    top: -2000px;
+    left: 0;
+    right: 0;
+    height: auto;
+    z-index: 1030;
+    margin: auto;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+.edit-Popup.active{
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    top: 30px;
+}
+.editHeader {
+    font-weight: 600;
+    font-size: 14px;
+}
+label {
+    font-size: 12px;
+}
+.tableDataOuter {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 32px 1px rgb(0 0 0 / 10%);
+}
+.tableFieldName,.tableFieldValue {
+    font-size: 14px;
+}
+.tableFieldName {
+    font-weight: 600;
+}
+.editDeleteBox {
+    z-index: 2;
+}
+.addIdentityCloseBtn,.filterBox img,.editPopupClose {
+    cursor: pointer;
+}
+.active {
+    display: block;
+}

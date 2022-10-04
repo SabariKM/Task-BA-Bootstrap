@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+*{
+    font-family: 'Inter', sans-serif;
+}
+.headerInner {
+  height: 80px;
+  background-color: #112a54;
+  margin: 0;
+  padding: 0 16px;
+}
+.logo {
+  width: 144px;
+  height: 24px;
+}
+.dashboardSearchIcon {
+  left: 7px;
+  top: 7px;
+}
+.dashboardSearchIcon2 {
+  left: 3px;
+  top: 11px;
+}
+.search-input {
+  height: 32px;
+  width: 330px;
+  background-color: #0063A9;
+  border: none;
+  color: #fff;
+  padding: 0px 36px;
+  border-radius: 2px;
+}
+.search-input::placeholder {
+  color: #fff;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px #F0F0F0;
+  /* border-radius: 10px; */
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #A6A6A6; 
+  /* border-radius: 10px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #A6A6A6; 
+}
+.adminName {
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+}
+.domain {
+  font-size: 9px;
+  color: #0094FD;
+  text-align: right;
+  line-height: 16px;
+}
+.bodyContainer {
+  margin-top: 96px;
+  position: relative;
+  overflow: hidden;
+}
+.floatingContainer {
+  margin-top: 80px;
+}
+.floatingContainer2 {
+  margin-top: 80px;
+}
+.floatingContainer3 {
+  margin-top: 80px;
+}
+.dashboard {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0094FD;
+  line-height: 24px;
+}
+.db-Path {
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #A6A6A6;
+}
+.db-Position{
+  color: #000000;
+}
+.gatewayName {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: right;
+}
+.connectedGateway {
+  font-size: 12px;
+  line-height: 16px;
+}
+.manageGatewayBox,.summaryBox,.servicesBox {
+  background-color: white;
+  box-shadow: 0px 1px 32px 1px rgb(0 0 0 / 10%);
+  height: 576px;
+}
+.innerHeader,.floatinginnerHeader {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.gatewayNo {
+  font-size: 12px;
+  line-height: 14px;
+}
+.gatewaySearchIcon {
+  top: 7px;
+  left: 207px;
+}
+.commonBtn{
+  width: 96px;
+  height: 32px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 24px;
+}
+button.remove {
+  background-color: transparent;
+  border: 1px solid #BABABA;
+  margin-right: 11px;
+}
+button.add {
+  background-color: #0094FD;
+  color: white;
+  border: none;
+}
+.gatewayHead {
+  border-bottom: 1px solid #DFDFDF;
+  line-height: 39px;
+}
+input[type="checkbox"] {
+  margin: 0;
+}
+.gatewayNames {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+.bodygatewayNames{
+  font-weight: 400;
+}
+.certificateExpiry {
+  font-size: 12px;
+  font-weight: 600;
+}
+.gatewayBodyOuter {
+  max-height: 345px;
+  overflow: auto;
+}
+.gatewayBody {
+  line-height: 39px;
+  border-bottom: 1px solid #DFDFDF;
+}
+.expiryTime {
+  font-size: 12px;
+}
+button.saveBtn {
+  border: none;
+  background-color: #0094fd;
+  color: #fff;
+}
+.summaryContentBox,.servicesContentBox{
+  height: 56px;
+  background-color: white;
+  box-shadow: 0px 1px 32px 1px rgba(0, 0, 0, 0.1);
+}
+.expiryBox{
+  height: 80px;
+}
+.summaryIcon {
+  width: 36px;
+  height: 36px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  margin-right: 16px;
+  background-repeat: no-repeat;
+  background-size: 16px auto;
+  background-position: center center;
+}
+.smryIcon1{
+  background-image: url(../images/ITO_light.svg);
+  background-color: #0094FD;
+}
+.smryIcon2{
+  background-image: url(../images/Not\ Configured\ Icon\ 1.svg);
+  background-color: #194B9F;
+}
+.smryIcon3{
+  background-image: url(../images/Not\ Configured\ Icon\ 2.svg);
+  background-color: #F5B31F;
+}
+.smryIcon4{
+  background-image: url(../images/Alpha\ Icon.svg);
+  background-color: #69C536;
+}
+.smryIcon5{
+  background-image: url(../images/Version\ Icon.svg);
+  background-color: #8E5ED5;
+}
+.smryIcon6{
+  background-image: url(../images/Clock_light\ Icon.svg);
+  background-color: #ACA9AF;
+}
+.smryIcon7{
+  background-image: url(../images/Clock_light\ Icon.svg);
+  background-color: #8E5ED5;
+}
+.summaryValue,.serviceValue {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+.enabledValue {
+  color: #69C536;
+}
+.expiryValue{
+  color: #FF3D3D;
+}
+.summaryField,.serviceField {
+  font-size: 11px;
+  line-height: 16px;
+}
+.expiryBox {
+  display: flex;
+}
+.expiryHover{
+  display: none;
+  height: 80px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+}
+.gatewayCertificate{
+  font-size: 12px;
+  line-height: 15px;
+}
+.expiryDay{
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 600;
+  color: #0094fd;
+}
+.expiryOuterBox:hover .expiryBox{
+  display: none;
+}
+.expiryOuterBox:hover .expiryHover{
+  display: block;
+}
+.servicesContentBox{
+  height: 72px;
+}
+.serviceIconMain {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.enabledIcon {
+  background-color: #69c536 !important;
+  background: url(../images/Done_light.svg) no-repeat center center;
+}
+.disabledIcon {
+  background: url(../images/Disabled\ Icon.svg) no-repeat center center;
+}
+.floatingDiv {
+  position: fixed;
+  top: 0;
+  right: 18px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.floatingIcon {
+  width: 40px;
+  height: 40px;
+  background-color: #0094FD;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08), 0px 4px 48px rgba(0, 0, 0, 0.08);
+}
+.statisicsIcon {
+  background-image: url(../images/Statisics\ Icon.svg);
+}
+.identitiesIcon {
+  background-image: url(../images/Identities\ Icon.svg);
+}
+.trustLevelIcon {
+  background-image: url(../images/TrustLvl\ Icon.svg);
+}
+.outer-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1;
+  display: none;
+}
+.footerInner{
+  height: 24px;
+  background-color: white;
+  border-top: 1px solid #CECECE;
+  font-size: 10px;
+  line-height: 24px;
+}
+.statisticsOuterContainer,.identitiesOuterContainer,.trustLevelOuterContainer,.dashboardOuterContainer {
+  z-index: 2;
+  top: 0;
+  left: 1870px;
+  background-color: white;
+  height: 1956px !important;
+  width: 100%;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+}
+.activeStatistics,.activeIdentities,.activeTrustLevel,.activeDashboard {
+  left: 0;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+}
+.statisticsPeriod {
+  margin-right: 32px;
+}
+.periodBox {
+  font-size: 12px;
+  line-height: 32px;
+  padding: 0 7px;
+}
+.activePeriod {
+  background-color: #018cf3;
+  color: #fff;
+}
+.st-ContentBox {
+  height: 144px;
+  box-shadow: 0px 1px 32px 1px rgb(0 0 0 / 10%);
+}
+.st-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+.st-field {
+  font-size: 16px;
+  line-height: 16px;
+}
+.st-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.packetIcon {
+  background-image: url(../images/Insert\ Icon.svg);
+  background-color: #194B9F;
+}
+.dropIcon {
+  background-image: url(../images/icon-collisions.svg);
+  background-color: #F5B31F;
+}
+.st-forwardIcon {
+  background-image: url(../images/Forward\ Icon.svg);
+  background-color: #FF3D3D;
+}
+.spliceIcon {
+  background-image: url(../images/Tcp\ splice\ Icon.svg);
+  background-color: #69C536;
+}
+.taggedIcon {
+  background-image: url(../images/Tcp\ Splice\ tagged\ Icon.svg);
+  background-color: #0094FD;
+}
+.anonymousIcon {
+  background-image: url(../images/Tcp\ Splice\ Anonymous\ Icon.svg);
+  background-color: #8E5ED5;
+}
+.insertIcon {
+  background-image: url(../images/Token\ Insert\ Icon.svg);
+  background-color: #194B9F;
+}
+.validateIcon {
+  background-image: url(../images/Token\ Validate\ Icon.svg);
+  background-color: #F5B31F;
+}
+.threshIcon {
+  background-image: url(../images/Token\ Not\ Met\ Icon.svg);
+  background-color: #69C536;
+}
+.collisionIcon {
+  background-image: url(../images/Token\ Collision\ Icon.svg);
+  background-color: #0094FD;
+}
+.identitiesContentOuter {
+  border-bottom: 1px solid #c4c4c4;
+  padding: 0 16px 32px;
+}
+.hrIcon {
+  background-image: url(../images/Hr\ Icon.svg);
+  background-color: #194B9F;
+}
+.marketingIcon {
+  background-image: url(../images/Marketing\ Icon.svg);
+  background-color: #F5B31F;
+}
+.serviceIcon {
+  background-image: url(../images/Service\ Icon.svg);
+  background-color: #FF3D3D;
+}
+.accountsIcon {
+  background-image: url(../images/Accounts\ Icon.svg);
+  background-color: #69C536;
+}
+.forwardIcon {
+  background-image: url(../images/Forward\ Icon.svg);
+  background-color: #69C536;
+}
+.discardIcon {
+  background-image: url(../images/Discard\ Icon.svg);
+  background-color: #0094FD;
+}
+.identitiesBox,.rulesBox {
+  width: 16px;
+  height: 16px;
+  background-color: #0094fd;
+}
+.rulesBox {
+  background-color: #4ed4cf;
+}
+span.graphDescription {
+  font-size: 12px;
+  line-height: 16px;
+}
+.dashboardMenuItems {
+  background-color: #fff;
+  width: 216px;
+  height: 688px;
+  top: 80px;
+  left: -218px;
+  z-index: 3;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+.dashboardMenuItems.activedDashboard {
+  left: 0;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+.dashboardMenuItems a {
+  text-decoration: none;
+  color: #000000;
+}
+.activeSubmenuItems {
+  color: #0094FD;
+}
+span.dashboardDescription {
+  font-size: 12px;
+  line-height: 40px;
+  padding-left: 17px;
+}
+.exploreMenu,.endpointMenu {
+  position: relative;
+}
+.exploreDropdown,.endpointDropdown {
+  position: absolute;
+  right: 14px;
+  top: 15px;
+  width: 6px;
+  height: 6px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  transform: rotate(315deg);
+  transition: transform .5s ease-in-out;
+}
+.activeDropdown{
+  transform: rotate(135deg);
+  transition: all 0.5s ease-in-out 0s;
+}
+.dashboardMenu:hover {
+  background-color: #E4F4FF;
+}
+.activeMenu {
+  font-weight: 600;
+  background-color: #E4F4FF;
+}
+.subMenuItems {
+  line-height: 32px;
+  font-size: 12px;
+  padding-left: 48px;
+}
+.subMenu{
+  display: none;
+  transition: all 0.5s ease-in-out 0s;
+  margin-left: -10px;
+  background-color: #fff;
+  font-weight: 400;
+}
+.activeSubmenu{
+  color: #0094FD;
+  transition: all 0.5s ease-in-out 0s;
+}
+.uncheckedType1 {
+  background: url(../images/Unchecked\ Box.svg) no-repeat center center;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+.checkbox:checked + .uncheckedType1 {
+  background: url(../images/Checked\ Box.svg) no-repeat center center;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+.checkbox {
+  display : none;
+}
+.cancelBtn,.identityCancelBtn,.cancelEditBtn {
+  width: 96px;
+  height: 32px;
+  border: 1px solid #BABABA;
+  font-size: 10px;
+  font-weight: 600;
+}
+.applyBtn,.identityApplyBtn,.submitEdit {
+  width: 96px;
+  height: 32px;
+  background-color: #0094FD;
+  border: none;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+}
+.loader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: url(../images/gears.gif) no-repeat center center;
+  width: 100%;
+  height: 100%;
+}
+.loader-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2;
+  background: #f1f7fa;
+  display: block;
+}
+.menuIcon,.dashboardMenuItems,.floatingIcon,.closeStatisticsBtn,.identitiesCloseBtn,.trustLevelCloseBtn,.closeDashboardBtn {
+  cursor: pointer;
+}
+.active {
+  display: block;
+}

@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./owncss/dashboardStyle.css">
+    <link rel="stylesheet" href="./owncss/identityStyle.css">
+    <title>Identity Management</title>
+</head>
+<body onload="myFunction()">
+    <header class="fixed-top">
+        <div class="container-fluid p-0">
+            <div class="row headerInner align-items-center">
+                <div class="col-xl-6 col-lg-4 col-md-4 col-sm-4 col-6 p-0">
+                    <div class="topLeft">
+                        <img src="./images/Menu.svg" alt="Menu" class="menuIcon">
+                        <img src="./images/Blue Armor Logo.png" alt="BlueArmor" class="logo"> 
+                    </div> 
+                    <div class="dashboardMenuItems position-absolute">
+                        <div class="dashboardMenu d-xl-none d-lg-none d-md-none d-sm-block d-block mb-2 mt-2 position-relative">
+                            <input type="text" placeholder="Search" class="dashboardSearchInput form-control px-4">
+                            <img src="./images/String-icon-search blue.svg" alt="Search Icon" class="dashboardSearchIcon2 position-absolute">
+                        </div>
+                        <a href="./bluearmor2.html" class="dashboardPage">
+                            <div class="dashboardMenu d-flex align-items-center ps-2">                    
+                                    <img src="./images/Dashboard Icon.svg" alt="Dashboard">
+                                    <span class="dashboardDescription">Dashboard</span>                        
+                            </div>
+                        </a>
+                        <div class="dashboardMenu activeMenu exploreMenu ps-2">
+                            <img src="./images/Explore Icon.svg" alt="Explore">
+                            <span class="dashboardDescription">Explore</span>
+                            <span class="exploreDropdown"></span>
+                            <div class="subMenu">
+                                <a href="./identityManagement.html" class="identityManagementPage">
+                                    <div class="subMenuItems activeSubmenuItems">Identity Management</div>
+                                </a>                        
+                                <div class="subMenuItems">Rules Management</div>
+                                <div class="subMenuItems">Trust Level</div>
+                                <div class="subMenuItems">Resource Management</div>
+                                <div class="subMenuItems">Resource List Management</div>
+                            </div>
+                        </div>
+                        <div class="dashboardMenu d-flex align-items-center ps-2">
+                            <img src="./images/Management Network Icon.svg" alt="Management Network">
+                            <span class="dashboardDescription">Management Network</span>
+                        </div>
+                        <div class="dashboardMenu d-flex align-items-center ps-2">
+                            <img src="./images/Gateway Services Icon.svg" alt="Gateway Services">
+                            <span class="dashboardDescription">Gateway Services</span>
+                        </div>
+                        <div class="dashboardMenu endpointMenu d-flex align-items-center ps-2">
+                            <img src="./images/Endpoint Icon.svg" alt="Endpoint">
+                            <span class="dashboardDescription">Endpoint</span>
+                            <span class="endpointDropdown"></span>
+                        </div>
+                        <div class="dashboardMenu d-flex align-items-center ps-2">
+                            <img src="./images/Maintenance Icon.svg" alt="Maintenance">
+                            <span class="dashboardDescription">Maintenance</span>
+                        </div>
+                        <div class="dashboardMenu d-flex align-items-center ps-2">
+                            <img src="./images/Monitoring Icon.svg" alt="Monitoring">
+                            <span class="dashboardDescription">Monitoring</span>
+                        </div>
+                        <div class="dashboardMenu d-xl-none d-lg-none d-md-none d-sm-block d-block d-flex align-items-center ps-2 ">
+                            <img src="./images/Bell_pin_light.svg" alt="Notification">
+                            <span class="dashboardDescription">Notification</span>
+                        </div>
+                    </div>        
+                </div>
+                <div class="col-xl-6 col-lg-8 col-md-8 col-sm-8 col-6 p-xl-0 p-lg-0 p-md-0 pe-sm-3 pe-3">
+                    <div class="row justify-content-end">
+                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 p-0">
+                            <div class="d-flex justify-content-xl-evenly justify-content-lg-evenly justify-content-md-evenly justify-content-sm-end justify-content-end">
+                                <div class="searchInput position-relative d-xl-block d-lg-block d-md-block d-sm-none d-none">
+                                    <input type="text" placeholder="Search" class="search-input">
+                                    <img src="./images/String-icon-search blue.svg" alt="Search" class="dashboardSearchIcon position-absolute">
+                                </div>
+                                <div class="notificationIcon d-xl-block d-lg-block d-md-block d-sm-none d-none">
+                                    <img src="./images/Notification.svg" alt="Notification">
+                                </div>
+                                <div class="aboutAdmin d-flex">
+                                    <div class="adminInfo">
+                                        <div class="adminName">Joanne Logan</div>
+                                        <div class="domain">Administrator</div>
+                                    </div>
+                                    <div class="adminProfile ms-2">
+                                        <img src="./images/Admin Profile.svg" alt="AdminProfile">                               
+                                    </div>                       
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="outer-bg"></div>
+    <div class="popup-bg"></div>
+    <div class="loader-bg"></div>
+    <div class="loader"></div>
+    <div class="filterForm position-absolute p-4">
+        <div class="filterHead d-flex justify-content-between mb-3">
+            <span class="filterHeadText">Filter Option</span>
+            <img src="./images/Dashboard Close Icon.svg" alt="Close" class="filterCloseBtn">
+        </div>
+        <div class="formOuter">
+            <form class="formInner" action="">
+                <div class="formList mb-3">
+                    <label class="formFieldName" for="filterName">Name</label>
+                    <div class="filterInputField d-flex align-items-center">
+                        <input type="checkbox" name="filterCheckBox" id="filterCheckBox1" class="checkbox">
+                        <label class="uncheckedType2" for="filterCheckBox1"></label>
+                        <input type="text" id="filterName" class="filterInputs form-control ms-2">
+                    </div>                    
+                </div>
+                <div class="formList mb-3">
+                    <label class="formFieldName" for="filterGroup">Group</label>
+                    <div class="filterInputField d-flex align-items-center">
+                        <input type="checkbox" name="filterCheckBox" id="filterCheckBox2" class="checkbox" checked>
+                        <label class="uncheckedType2" for="filterCheckBox2"></label>
+                        <input type="text" id="filterGroup" class="filterInputs form-control ms-2">
+                    </div>                    
+                </div>
+                <div class="formList mb-3">
+                    <label class="formFieldName" for="filterTrustLevel">Trust Level</label>
+                    <div class="filterInputField d-flex align-items-center">
+                        <input type="checkbox" name="filterCheckBox" id="filterCheckBox3" class="checkbox">
+                        <label class="uncheckedType2" for="filterCheckBox3"></label>
+                        <input type="text" id="filterTrustLevel" class="filterInputs form-control ms-2">
+                    </div>                    
+                </div>
+                <div class="formList mb-3">
+                    <label class="formFieldName" for="filterIp">IP address/Prefix Mac</label>
+                    <div class="filterInputField d-flex align-items-center">
+                        <input type="checkbox" name="filterCheckBox" id="filterCheckBox4" class="checkbox">
+                        <label class="uncheckedType2" for="filterCheckBox4"></label>
+                        <input type="text" id="filterIp" class="filterInputs form-control ms-2">
+                    </div>                    
+                </div>
+                <div class="formList mb-3">
+                    <label class="formFieldName" for="filterComment">Comment</label>
+                    <div class="filterInputField d-flex align-items-center">
+                        <input type="checkbox" name="filterCheckBox" id="filterCheckBox5" class="checkbox">
+                        <label class="uncheckedType2" for="filterCheckBox5"></label>
+                        <input type="text" id="filterComment" class="filterInputs form-control ms-2">
+                    </div>                    
+                </div>
+                <div class="formList mb-3">
+                    <label class="formFieldName" for="filterTcp">TCP Tagging</label>
+                    <div class="filterInputField d-flex align-items-center">
+                        <input type="checkbox" name="filterCheckBox" id="filterCheckBox6" class="checkbox">
+                        <label class="uncheckedType2" for="filterCheckBox6"></label>
+                        <input type="text" id="filterTcp" class="filterInputs form-control ms-2">
+                    </div>                    
+                </div>
+                <div class="formList mb-3">
+                    <label class="formFieldName" for="filterRemote">Remote Key</label>
+                    <div class="filterInputField d-flex align-items-center">
+                        <input type="checkbox" name="filterCheckBox" id="filterCheckBox7" class="checkbox">
+                        <label class="uncheckedType2" for="filterCheckBox7"></label>
+                        <input type="text" id="filterRemote" class="filterInputs form-control ms-2">
+                    </div>                    
+                </div>
+                <div class="formList mb-3">
+                    <label class="formFieldName" for="filterEnabled">Enabled</label>
+                    <div class="filterInputField d-flex align-items-center">
+                        <input type="checkbox" name="filterCheckBox" id="filterCheckBox8" class="checkbox" checked>
+                        <label class="uncheckedType2" for="filterCheckBox8"></label>
+                        <input type="text" id="filterEnabled" class="filterInputs form-control ms-2">
+                    </div>                    
+                </div>
+                <div class="formBtn d-flex justify-content-end">
+                    <button type="button" class="cancelBtn me-2">Cancel</button>
+                    <button type="button" class="applyBtn">Apply</button>
+                </div>
+            </form>        
+        </div>
+    </div>
+    <div class="row">
+        <div class="addIdentityForm col-lg-6 col-10 position-absolute p-4">
+            <div class="filterHead d-flex justify-content-between mb-3">
+                <span class="filterHeadText">Add Identity</span>
+                <img src="./images/Dashboard Close Icon.svg" alt="Close" class="addIdentityCloseBtn">
+            </div>
+            <div class="row">
+                <form class="addIdentityFormInner d-flex flex-wrap" action="">
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList mb-3 me-sm-3 me-0">
+                            <label class="formFieldName" for="identityName">Name</label>
+                            <input type="text" class="identityInputs form-control" id="identityName">
+                            <p class="errorMsg">Input field cannot be empty..!</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList mb-3">
+                            <label class="formFieldName" for="identityGroup">Group</label>
+                            <input type="text" class="identityInputs form-control" id="identityGroup">
+                            <p class="errorMsg">Input field cannot be empty..!</p>
+                        </div>
+                    </div>                
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList mb-3 me-sm-3 me-0">
+                            <label class="formFieldName" for="identityTrustLevel">Trust Level</label>
+                            <select class="identityInputs form-control" name="identityTrustLevel" id="identityTrustLevel">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4" selected>4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </select>
+                            <p class="errorMsg"></p>
+                        </div>
+                    </div>                
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList mb-3">
+                            <label class="formFieldName" for="identityIp">IP Address</label>
+                            <input type="text" class="identityInputs form-control" id="identityIp">
+                            <p class="errorMsg">Input field cannot be empty..!</p>
+                        </div>
+                    </div>                
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList mb-3 me-sm-3 me-0">
+                            <label class="formFieldName" for="identityMac">MAC</label>
+                            <input type="text" class="identityInputs form-control" id="identityMac" placeholder="-">
+                            <p class="errorMsg">Input field cannot be empty..!</p>
+                        </div>
+                    </div>                
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList mb-3">
+                            <label class="formFieldName" for="identityComment">Comment</label>
+                            <input type="text" class="identityInputs form-control" id="identityComment">
+                            <p class="errorMsg">Input field cannot be empty..!</p>
+                        </div>
+                    </div>                
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList mb-3 me-sm-3 me-0">
+                            <label class="formFieldName" for="identityTcp">TCP Tagging</label>
+                            <select class="identityInputs form-control" name="identityTcp" id="identityTcp">
+                                <option value="seq" selected>SEQ</option>
+                                <option value="qes">QES</option>
+                                <option value="eqs">EQS</option>                   
+                            </select>
+                        </div>
+                    </div>                
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList mb-3">
+                            <label class="formFieldName" for="identityRemote">Remote Key</label>
+                            <select class="identityInputs form-control" name="identityRemote" id="identityRemote">
+                                <option value="false" selected>False</option>
+                                <option value="true">True</option>                    
+                            </select>
+                        </div>
+                    </div>                
+                    <div class="col-sm-6 col-12">
+                        <div class="identityFormList enabledFieldList mb-3 me-sm-3 me-0">
+                            <label class="formFieldName" for="identityEnabled">Enabled</label>
+                            <select class="identityInputs form-control" name="identityEnabled" id="identityEnabled">
+                                <option value="false">False</option>
+                                <option value="true" selected>True</option>                    
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="formBtn d-flex justify-content-end">
+                            <button type="button" class="identityCancelBtn me-2">Cancel</button>
+                            <button type="button" class="identityApplyBtn">Apply</button>
+                        </div>
+                    </div>                             
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="edit-Popup col-lg-6 col-10 position-absolute p-3">
+            <div class="editHeader d-flex justify-content-between mb-3">
+                <span class="editTitle">Edit Identity Management</span>
+                <img src="./images/Dashboard Close Icon.svg" alt="close" class="editPopupClose">
+            </div>
+            <div class="row">
+                <form action="" class="editForm">
+                    <div class="formInner d-flex flex-wrap">
+                        <div class="col-sm-6 col-12">
+                            <div class="editFormList me-sm-3 me-0 mb-3">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" class="inputField form-control">
+                            </div>
+                        </div>                    
+                        <div class="col-sm-6 col-12">
+                            <div class="editFormList me-sm-3 me-0 mb-3">
+                                <label for="group">Group</label>
+                                <input type="text" id="group" class="inputField form-control">
+                            </div>
+                        </div>                    
+                        <div class="col-sm-6 col-12">
+                            <div class="editFormList me-sm-3 me-0 mb-3">
+                                <label for="trustlevel">Trust Level</label>
+                                <select class="inputField form-control" name="editTrustLevel" id="editTrustLevel">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4" selected>4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
+                            </div>
+                        </div>                    
+                        <div class="col-sm-6 col-12">
+                            <div class="editFormList me-sm-3 me-0 mb-3">
+                                <label for="ip">IP Address/Prefix MAC</label>
+                                <input type="text" id="ip" class="inputField form-control">
+                            </div>
+                        </div>                    
+                        <div class="col-sm-6 col-12">
+                            <div class="editFormList me-sm-3 me-0 mb-3">
+                                <label for="tcp">TCP Tagging</label>                    
+                                <select class="inputField form-control" name="tcp" id="tcp">
+                                    <option value="seq" selected>SEQ</option>
+                                    <option value="qes">QES</option>
+                                    <option value="eqs">EQS</option>                   
+                                </select>
+                            </div>
+                        </div>                    
+                        <div class="col-sm-6 col-12">
+                            <div class="editFormList me-sm-3 me-0 mb-3">
+                                <label for="remoteSwitch">Remote Key</label>                        
+                                <select class="inputField form-control" name="remoteSwitch" id="remoteSwitch">
+                                    <option value="false" selected>False</option>
+                                    <option value="true">True</option>                    
+                                </select>
+                            </div>
+                        </div>                    
+                        <div class="col-sm-6 col-12">
+                            <div class="editFormList statusDiv me-sm-3 me-0 mb-3">
+                                <label for="statusSwitch">Status</label>                    
+                                <select class="inputField form-control" name="statusSwitch" id="statusSwitch">
+                                    <option value="false">False</option>
+                                    <option value="true" selected>True</option>                    
+                                </select>
+                            </div>
+                        </div>                       
+                        <div class="col-sm-6 col-12">
+                            <div class="editFormList commentSection me-sm-3 me-0 mb-3">
+                                <label for="comment">Comment</label>
+                                <textarea id="comment" class="inputField form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="sumbitEditOuter d-flex justify-content-end">
+                        <button type="button" class="cancelEditBtn me-2">Cancel</button>
+                        <button type="button" class="submitEdit">Save Changes</button>
+                    </div>
+                </form>
+            </div>        
+        </div>
+    </div>    
+    <div class="container-fluid p-0">
+        <div class="bodyContainer">
+            <div class="row px-3">
+                <div class="col-xl-12">
+                    <div class="idnty-Mgmt-BrudGrum d-flex justify-content-between mb-4">
+                        <div class="currentBrudGrum">Identity Management</div>
+                        <div class="db-Path">Explore > <span class="db-Position">Identity Management</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row px-3">
+                <div class="col-xl-12">
+                    <div class="filterOuterBox d-flex justify-content-between align-items-center px-3">                        
+                        <div class="col-xl-6 col-6">
+                            <div class="filterInner d-flex justify-content-between">
+                                <div class="filterBox d-flex align-items-center">
+                                    <img src="./images/Filter Icon.svg" alt="Filter">
+                                    <span class="filterText ps-2">Filter</span>
+                                </div>
+                                <div class="filterSearch position-relative">
+                                    <img src="./images/Filter Search Icon.svg" alt="Filter Search" class="filterSearchIcon position-absolute">
+                                    <input type="text" class="filterSearchInput px-4" placeholder="Search">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-6">
+                            <div class="rightAction d-flex justify-content-end">
+                                <button type="button" class="remove commonBtn">
+                                    <img src="./images/Remove Icon.svg" alt="Remove" class="btnImage pe-2">Remove
+                                </button>
+                                <button type="button" class="add commonBtn addIdentityBtn">
+                                    <img src="./images/Add Icon.svg" alt="Add" class="btnImage pe-2">Add
+                                </button>
+                            </div>
+                        </div>                                                                     
+                    </div>
+                </div>
+            </div>
+            <div class="row px-3 mb-3 d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                <div class="col-xl-12">
+                    <div class="tableOuter row gy-xl-0 gy-lg-5 gy-0 mt-3">
+                        <div class="tableHead d-flex px-2 mb-1">
+                            <div class="col-1 d-flex justify-content-evenly">
+                                <div class="checkBoxField d-flex justify-content-center pe-3">
+                                    <input type="checkbox" name="checkbox" id="checkboxDemo" class="checkbox">
+                                    <label class="uncheckedType1" for="checkboxDemo"></label>
+                                </div>
+                                <div class="actionField d-flex justify-content-center">Action</div>
+                            </div>                            
+                            <div class="nameField col-2">Name</div>
+                            <div class="trustLvlField col-1 d-flex justify-content-center">Trust Level</div>
+                            <div class="groupField col-1">Group</div>
+                            <div class="enabledField col-1 d-flex justify-content-center">Enabled</div>
+                            <div class="ipAddressField col-2">IP Address/Prefix MAC</div>
+                            <div class="commentField col-2">Comment</div>
+                            <div class="tcpField col-1">TCP Tagging</div>
+                            <div class="remoteField col-1">Remote Key</div>
+                        </div>
+                        <div class="tableBody d-flex align-items-center mb-1">
+                            <div class="col-1 d-flex justify-content-evenly">
+                                <div class="checkBoxField d-flex justify-content-center pe-3">
+                                    <input type="checkbox" name="checkbox" id="checkbox1" class="checkbox" checked>
+                                    <label class="uncheckedType1" for="checkbox1"></label>
+                                </div>
+                                <div class="actionField d-flex justify-content-center position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText ps-2">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText ps-2">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="nameField col-2">Alphatrust1</div>
+                            <div class="trustLvlField col-1 d-flex justify-content-center">
+                                <div class="square level4">4</div>
+                            </div>
+                            <div class="groupField col-1">Identities</div>
+                            <div class="enabledField col-1 d-flex justify-content-center">
+                                <img src="./images/Enabled Icon.svg" alt="Enabled">
+                            </div>
+                            <div class="ipAddressField col-2">100.0.20/32</div>
+                            <div class="commentField col-2">Dolor sit amet</div>
+                            <div class="tcpField col-1">SEQ</div>
+                            <div class="remoteField falseField col-1">False</div>
+                        </div>
+                        <div class="tableBody d-flex align-items-center mb-1">
+                            <div class="col-1 d-flex justify-content-evenly">
+                                <div class="checkBoxField d-flex justify-content-center pe-3">
+                                    <input type="checkbox" name="checkbox" id="checkbox2" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox2"></label>
+                                </div>
+                                <div class="actionField d-flex justify-content-center position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText ps-2">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText ps-2">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="nameField col-2">Alphatrust2</div>
+                            <div class="trustLvlField col-1 d-flex justify-content-center">
+                                <div class="square level5">5</div>
+                            </div>
+                            <div class="groupField col-1">Rules</div>
+                            <div class="enabledField col-1 d-flex justify-content-center">
+                                <img src="./images/Enabled Icon.svg" alt="Enabled">
+                            </div>
+                            <div class="ipAddressField col-2">100.0.20/32</div>
+                            <div class="commentField col-2">Consectetur adipiscing elit, sed do</div>
+                            <div class="tcpField col-1">SEQ</div>
+                            <div class="remoteField trueField col-1">True</div>
+                        </div>
+                        <div class="tableBody d-flex align-items-center mb-1">
+                            <div class="col-1 d-flex justify-content-evenly">
+                                <div class="checkBoxField d-flex justify-content-center pe-3">
+                                    <input type="checkbox" name="checkbox" id="checkbox3" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox3"></label>
+                                </div>
+                                <div class="actionField d-flex justify-content-center position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText ps-2">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText ps-2">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="nameField col-2">Alphatrust4</div>
+                            <div class="trustLvlField col-1 d-flex justify-content-center">
+                                <div class="square level5">5</div>
+                            </div>
+                            <div class="groupField col-1">Endpoints</div>
+                            <div class="enabledField col-1 d-flex justify-content-center">
+                                <img src="./images/Enabled Icon.svg" alt="Enabled">
+                            </div>
+                            <div class="ipAddressField col-2">100.0.20/32</div>
+                            <div class="commentField col-2">Perspiciatis unde omnis iste natus de</div>
+                            <div class="tcpField col-1">SEQ</div>
+                            <div class="remoteField falseField col-1">False</div>
+                        </div>
+                        <div class="tableBody d-flex align-items-center mb-1">
+                            <div class="col-1 d-flex justify-content-evenly">
+                                <div class="checkBoxField d-flex justify-content-center pe-3">
+                                    <input type="checkbox" name="checkbox" id="checkbox4" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox4"></label>
+                                </div>
+                                <div class="actionField d-flex justify-content-center position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText ps-2">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText ps-2">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="nameField col-2">Alphatrust7</div>
+                            <div class="trustLvlField col-1 d-flex justify-content-center">
+                                <div class="square level6">6</div>
+                            </div>
+                            <div class="groupField col-1">Resources</div>
+                            <div class="enabledField col-1 d-flex justify-content-center">
+                                <img src="./images/Enabled Icon.svg" alt="Enabled">
+                            </div>
+                            <div class="ipAddressField col-2">100.0.20/32</div>
+                            <div class="commentField col-2">Ratione voluptatem sequi</div>
+                            <div class="tcpField col-1">SEQ</div>
+                            <div class="remoteField falseField col-1">False</div>
+                        </div>
+                        <div class="tableBody d-flex align-items-center mb-1">
+                            <div class="col-1 d-flex justify-content-evenly">
+                                <div class="checkBoxField d-flex justify-content-center pe-3">
+                                    <input type="checkbox" name="checkbox" id="checkbox5" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox5"></label>
+                                </div>
+                                <div class="actionField d-flex justify-content-center position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText ps-2">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText ps-2">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="nameField col-2">Alphatrust3</div>
+                            <div class="trustLvlField col-1 d-flex justify-content-center">
+                                <div class="square level7">7</div>
+                            </div>
+                            <div class="groupField col-1">Identities</div>
+                            <div class="enabledField col-1 d-flex justify-content-center">
+                                <img src="./images/Enabled Icon.svg" alt="Enabled">
+                            </div>
+                            <div class="ipAddressField col-2">100.0.20/32</div>
+                            <div class="commentField col-2">Dolor sit amet</div>
+                            <div class="tcpField col-1">SEQ</div>
+                            <div class="remoteField trueField col-1">True</div>
+                        </div>
+                        <div class="tableBody d-flex align-items-center mb-1">
+                            <div class="col-1 d-flex justify-content-evenly">
+                                <div class="checkBoxField d-flex justify-content-center pe-3">
+                                    <input type="checkbox" name="checkbox" id="checkbox6" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox6"></label>
+                                </div>
+                                <div class="actionField d-flex justify-content-center position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText ps-2">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText ps-2">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                            <div class="nameField col-2">Alphatrust5</div>
+                            <div class="trustLvlField col-1 d-flex justify-content-center">
+                                <div class="square level4">4</div>
+                            </div>
+                            <div class="groupField col-1">Rules</div>
+                            <div class="enabledField col-1 d-flex justify-content-center">
+                                <img src="./images/Enabled Icon.svg" alt="Enabled">
+                            </div>
+                            <div class="ipAddressField col-2">100.0.20/32</div>
+                            <div class="commentField col-2">Dolor sit amet consectetur adipiscing</div>
+                            <div class="tcpField col-1">SEQ</div>
+                            <div class="remoteField falseField col-1">False</div>
+                        </div>
+                        <div class="pagination d-flex justify-content-end mt-3">
+                            <a class="previousBtn" href="#"><span class="previousIcon"></span></a>
+                            <a class="active" href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">...</a>                
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a class="nextBtn" href="#"><span class="nextIcon"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row px-3 mb-3">
+                <div class="d-xl-none d-lg-none d-md-block d-sm-block">
+                    <div class="mobile-tableOuter mt-3">
+                        <div class="tableDataOuter p-4 mb-3">
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Check Box</div>
+                                <div class="tableFieldValue col-6">
+                                    <input type="checkbox" name="checkbox11" id="checkbox11" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox11"></label>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Action</div>
+                                <div class="tableFieldValue col-6 position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn  d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Name</div>
+                                <div class="tableFieldValue col-6">Alphatrust1</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Trust Level</div>
+                                <div class="tableFieldValue col-6">
+                                    <div class="square level4">4</div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Group</div>
+                                <div class="tableFieldValue col-6">Identities</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Enabled</div>
+                                <div class="tableFieldValue col-6">
+                                    <img src="./images/Enabled Icon.svg" alt="Enabled">
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">IP Address/Prefix MAC</div>
+                                <div class="tableFieldValue col-6">100.0.20/32</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Comment</div>
+                                <div class="tableFieldValue col-6">Dolor sit amet</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">TCP Tagging</div>
+                                <div class="tableFieldValue col-6">SEQ</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Remote Key</div>
+                                <div class="tableFieldValue falseField col-6">False</div>
+                            </div>
+                        </div>
+                        <div class="tableDataOuter p-4 mb-3">
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Check Box</div>
+                                <div class="tableFieldValue col-6">
+                                    <input type="checkbox" name="checkbox12" id="checkbox12" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox12"></label>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Action</div>
+                                <div class="tableFieldValue col-6 position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Name</div>
+                                <div class="tableFieldValue col-6">Alphatrust1</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Trust Level</div>
+                                <div class="tableFieldValue col-6">
+                                    <div class="square level4">4</div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Group</div>
+                                <div class="tableFieldValue col-6">Identities</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Enabled</div>
+                                <div class="tableFieldValue col-6">
+                                    <img src="./images/Enabled Icon.svg" alt="Enabled">
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">IP Address/Prefix MAC</div>
+                                <div class="tableFieldValue col-6">100.0.20/32</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Comment</div>
+                                <div class="tableFieldValue col-6">Dolor sit amet</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">TCP Tagging</div>
+                                <div class="tableFieldValue col-6">SEQ</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Remote Key</div>
+                                <div class="tableFieldValue falseField col-6">False</div>
+                            </div>
+                        </div>
+                        <div class="tableDataOuter p-4 mb-3">
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Check Box</div>
+                                <div class="tableFieldValue col-6">
+                                    <input type="checkbox" name="checkbox13" id="checkbox13" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox13"></label>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Action</div>
+                                <div class="tableFieldValue col-6 position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Name</div>
+                                <div class="tableFieldValue col-6">Alphatrust1</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Trust Level</div>
+                                <div class="tableFieldValue col-6">
+                                    <div class="square level4">4</div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Group</div>
+                                <div class="tableFieldValue col-6">Identities</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Enabled</div>
+                                <div class="tableFieldValue col-6">
+                                    <img src="./images/Enabled Icon.svg" alt="Enabled">
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">IP Address/Prefix MAC</div>
+                                <div class="tableFieldValue col-6">100.0.20/32</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Comment</div>
+                                <div class="tableFieldValue col-6">Dolor sit amet</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">TCP Tagging</div>
+                                <div class="tableFieldValue col-6">SEQ</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Remote Key</div>
+                                <div class="tableFieldValue falseField col-6">False</div>
+                            </div>
+                        </div>
+                        <div class="tableDataOuter p-4 mb-3">
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Check Box</div>
+                                <div class="tableFieldValue col-6">
+                                    <input type="checkbox" name="checkbox14" id="checkbox14" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox14"></label>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Action</div>
+                                <div class="tableFieldValue col-6 position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Name</div>
+                                <div class="tableFieldValue col-6">Alphatrust1</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Trust Level</div>
+                                <div class="tableFieldValue col-6">
+                                    <div class="square level4">4</div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Group</div>
+                                <div class="tableFieldValue col-6">Identities</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Enabled</div>
+                                <div class="tableFieldValue col-6">
+                                    <img src="./images/Enabled Icon.svg" alt="Enabled">
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">IP Address/Prefix MAC</div>
+                                <div class="tableFieldValue col-6">100.0.20/32</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Comment</div>
+                                <div class="tableFieldValue col-6">Dolor sit amet</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">TCP Tagging</div>
+                                <div class="tableFieldValue col-6">SEQ</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Remote Key</div>
+                                <div class="tableFieldValue falseField col-6">False</div>
+                            </div>
+                        </div>
+                        <div class="tableDataOuter p-4 mb-3">
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Check Box</div>
+                                <div class="tableFieldValue col-6">
+                                    <input type="checkbox" name="checkbox15" id="checkbox15" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox15"></label>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Action</div>
+                                <div class="tableFieldValue col-6 position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Name</div>
+                                <div class="tableFieldValue col-6">Alphatrust1</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Trust Level</div>
+                                <div class="tableFieldValue col-6">
+                                    <div class="square level4">4</div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Group</div>
+                                <div class="tableFieldValue col-6">Identities</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Enabled</div>
+                                <div class="tableFieldValue col-6">
+                                    <img src="./images/Enabled Icon.svg" alt="Enabled">
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">IP Address/Prefix MAC</div>
+                                <div class="tableFieldValue col-6">100.0.20/32</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Comment</div>
+                                <div class="tableFieldValue col-6">Dolor sit amet</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">TCP Tagging</div>
+                                <div class="tableFieldValue col-6">SEQ</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Remote Key</div>
+                                <div class="tableFieldValue falseField col-6">False</div>
+                            </div>
+                        </div>
+                        <div class="tableDataOuter p-4 mb-3">
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Check Box</div>
+                                <div class="tableFieldValue col-6">
+                                    <input type="checkbox" name="checkbox16" id="checkbox16" class="checkbox">
+                                    <label class="uncheckedType1" for="checkbox16"></label>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Action</div>
+                                <div class="tableFieldValue col-6 position-relative">
+                                    <img src="./images/Action Icon.svg" alt="Action">
+                                    <div class="editDeleteBox">
+                                        <div class="editBtn d-flex align-items-center p-2">
+                                            <img src="./images/Edit Icon.svg" alt="Edit"> 
+                                            <span class="editText">Edit</span>
+                                        </div>
+                                        <div class="deleteBtn d-flex align-items-center p-2">
+                                            <img src="./images/Delete Icon.svg" alt="Delete">
+                                            <span class="deleteText">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Name</div>
+                                <div class="tableFieldValue col-6">Alphatrust1</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Trust Level</div>
+                                <div class="tableFieldValue col-6">
+                                    <div class="square level4">4</div>
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Group</div>
+                                <div class="tableFieldValue col-6">Identities</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Enabled</div>
+                                <div class="tableFieldValue col-6">
+                                    <img src="./images/Enabled Icon.svg" alt="Enabled">
+                                </div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">IP Address/Prefix MAC</div>
+                                <div class="tableFieldValue col-6">100.0.20/32</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Comment</div>
+                                <div class="tableFieldValue col-6">Dolor sit amet</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">TCP Tagging</div>
+                                <div class="tableFieldValue col-6">SEQ</div>
+                            </div>
+                            <div class="tableData d-flex justify-content-start py-2">
+                                <div class="tableFieldName col-6">Remote Key</div>
+                                <div class="tableFieldValue falseField col-6">False</div>
+                            </div>
+                        </div>
+                        <div class="pagination d-flex justify-content-xl-end justify-content-lg-end justify-content-md-center justify-content-sm-center justify-content-center">
+                            <a class="previousBtn" href="#"><span class="previousIcon"></span></a>
+                            <a class="active" href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">...</a>                
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a class="nextBtn" href="#"><span class="nextIcon"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="floatingDiv">
+                <div class="floatingIcon mb-3 statisicsIcon"></div>
+                <div class="floatingIcon mb-3 identitiesIcon"></div>
+                <div class="floatingIcon mb-3 trustLevelIcon"></div>
+                <div class="floatingIcon floatingDashboardIcon"></div>
+            </div>
+            <div class="statisticsOuterContainer h-auto position-absolute">
+                <div class="innerContainer pb-3 m-3">
+                    <div class="innerHeader d-flex justify-content-between mb-3">Statistics
+                        <img src="./images/Dashboard Close Icon.svg" alt="Close" class="closeStatisticsBtn">
+                    </div>
+                    <div class="statisticsAction d-flex justify-content-xl-between justify-content-lg-between justify-content-md-between justify-content-sm-center justify-content-center flex-wrap">
+                        <div class="leftAction position-relative">
+                            <input type="text" placeholder="Search..." class="mg-SearchBox">
+                            <img src="./images/Gateway Search Icon.svg" alt="GatewaySearch" class="position-absolute gatewaySearchIcon">
+                        </div>
+                        <div class="statisticsPeriod d-flex align-items-center mt-xl-0 mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+                            <div class="periodBox me-2 px-2">1 Day</div>
+                            <div class="periodBox activePeriod me-2 px-2">1 Week</div>
+                            <div class="periodBox me-2 px-2">1 Month</div>
+                            <div class="periodBox me-2 px-2">6 Months</div>
+                            <div class="periodBox me-2 px-2">1 Year</div>
+                        </div>
+                    </div>
+                    <div class="statisticsContentOuter mt-3">
+                        <div class="row flex-wrap px-3">
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon packetIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">402</div>
+                                        <div class="st-field">TCP Packet In</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon dropIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">7</div>
+                                        <div class="st-field">TCP Drop In</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon st-forwardIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">0</div>
+                                        <div class="st-field">TCP Forward</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon spliceIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">704263425</div>
+                                        <div class="st-field">TCP Splice</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon taggedIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">29503251000</div>
+                                        <div class="st-field">TCP Splice Tagged</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon anonymousIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">19166274399999</div>
+                                        <div class="st-field">TCP Splice Anonymous</div>
+                                    </div>
+                                </div>
+                            </div>                             
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon insertIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">84418926</div>
+                                        <div class="st-field">Token Insert</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon validateIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">807101193</div>
+                                        <div class="st-field">TCP Validate</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon threshIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">424820547</div>
+                                        <div class="st-field">Threshold Not Met</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon collisionIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">910090774</div>
+                                        <div class="st-field">Token Collision</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="identitiesOuterContainer h-auto position-absolute">
+                <div class="innerContainer pb-3">
+                    <div class="floatinginnerHeader d-flex justify-content-between m-3">Identities
+                        <img src="./images/Dashboard Close Icon.svg" alt="Close" class="identitiesCloseBtn">
+                    </div>
+                    <div class="statisticsContentOuter identitiesContentOuter px-3 pb-4">
+                        <div class="row flex-wrap px-3">
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon hrIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">1</div>
+                                        <div class="st-field">HR</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon marketingIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">5</div>
+                                        <div class="st-field">Marketing</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon serviceIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">3</div>
+                                        <div class="st-field">Service</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon accountsIcon"></div>
+                                    <div class="st-details d-flex flex-column align-items-center">
+                                        <div class="st-value">2</div>
+                                        <div class="st-field">Accounts</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="floatinginnerHeader d-flex justify-content-between m-3">Rules</div>
+                    <div class="statisticsContentOuter rulesContentOuter px-3 pb-4">
+                        <div class="row flex-wrap px-3">
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon st-forwardIcon"></div>
+                                    <div class="st-details">
+                                        <div class="st-value">25</div>
+                                        <div class="st-field">Forward</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                                <div class="st-ContentBox me-xl-3 me-lg-3 me-md-3 me-sm-3 me-0 mb-3 d-flex flex-column align-items-center justify-content-between py-3">
+                                    <div class="st-icon discardIcon"></div>
+                                    <div class="st-details">
+                                        <div class="st-value">10</div>
+                                        <div class="st-field">Discard</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trustLevelOuterContainer h-auto position-absolute">
+                <div class="innerContainer pb-3 m-3">
+                    <div class="innerHeader d-flex justify-content-between mb-3">Trust Levels
+                        <img src="./images/Dashboard Close Icon.svg" alt="Close" class="trustLevelCloseBtn">
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="graphDetails d-flex justify-content-end me-5 mb-3">
+                                <div class="identitiesBoxOuter d-flex me-3">
+                                    <div class="identitiesBox me-2"></div>
+                                    <span class="graphDescription">Sum of Identities</span>
+                                </div>
+                                <div class="rulesBoxOuter d-flex">
+                                    <div class="rulesBox me-2"></div>
+                                    <span class="graphDescription">Sum of Rules</span>
+                                </div>
+                            </div>
+                            <div class="graphOuter col-xl-12 col-10 ms-5">
+                                <img src="./images/Graph.svg" alt="Graph" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="dashboardOuterContainer h-auto position-absolute">
+                <div class="innerContainer pb-3 m-3">
+                    <div class="dashboardBrudGrum d-flex justify-content-between">
+                        <div class="db-BrudGrumLeft">
+                            <div class="dashboard">Dashboard</div>
+                            <div class="db-Path">Home > <span class="db-Position">Dashboard</span></div>
+                        </div>
+                        <div class="db-BrudGrumRightOuter d-flex align-items-start">
+                            <div class="db-BrudGrumRight me-3">
+                                <div class="gatewayName">BRGW-I-431</div>
+                                <div class="connectedGateway">Connected Gateway 55</div>
+                            </div>
+                            <img src="./images/Dashboard Close Icon.svg" alt="Dashboard Close" class="closeDashboardBtn">
+                        </div>
+                    </div>
+                    <div class="row mt-3 px-3">
+                        <div class="dashboardContent d-flex flex-wrap">
+                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 mb-md-3 mb-sm-3 mb-3">
+                                <div class="manageGatewayBox me-xl-3 me-lg-0 me-md-0 me-sm-0 p-3 h-xl-0 h-lg-0 h-md-0 h-sm-0 h-auto">
+                                    <div class="innerHeader mb-3">Manage Gateway</div>
+                                    <div class="gatewayNo">BRGW-I-431</div>
+                                    <div class="gatewayAction d-flex justify-content-between mt-2 flex-wrap">
+                                        <div class="leftAction position-relative col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <input type="text" placeholder="Search..." class="mg-SearchBox">
+                                            <img src="./images/Gateway Search Icon.svg" alt="GatewaySearch" class="position-absolute gatewaySearchIcon">
+                                        </div>
+                                        <div class="rightAction col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-end mt-xl-0 mt-lg-0 mt-md-0 mt-sm-0 mt-3">
+                                            <button type="button" class="remove commonBtn d-flex align-items-center justify-content-center">
+                                                <img src="./images/Remove Icon.svg" alt="Remove" class="btnImage pe-2">Remove
+                                            </button>
+                                            <button type="button" class="add commonBtn d-flex align-items-center justify-content-center">
+                                                <img src="./images/Add Icon.svg" alt="Add" class="btnImage pe-2">Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="gatewayHead mt-3 d-flex justify-content-between me-3">
+                                        <div class="gatewayCheck d-flex align-items-center">
+                                            <input type="checkbox" name="gatewaychk" id="gateway" class="checkbox">
+                                            <label class="uncheckedType1" for="gateway"></label>
+                                            <label for="gatewaychk" class="gatewayNames ms-3">Gateway</label>
+                                        </div>
+                                        <div class="certificateExpiry pe-3">Certificate Expiry</div>
+                                    </div>
+                                    <div class="gatewayBodyOuter">
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway1" class="checkbox" checked>
+                                                <label class="uncheckedType1" for="gateway1"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway1">BRGW-I-431</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">05/09/2021</div>
+                                        </div>
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway2" class="checkbox">
+                                                <label class="uncheckedType1" for="gateway2"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway2">BRGW-3-520</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">06/09/2021</div>
+                                        </div>
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway3" class="checkbox">
+                                                <label class="uncheckedType1" for="gateway3"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway3">BRGW-2-321</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">03/09/2021</div>
+                                        </div>
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway4" class="checkbox">
+                                                <label class="uncheckedType1" for="gateway4"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway4">BRGW-4-658</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">07/09/2021</div>
+                                        </div>
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway5" class="checkbox">
+                                                <label class="uncheckedType1" for="gateway5"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway5">BRGW-I-982</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">09/09/2021</div>
+                                        </div>
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway6" class="checkbox">
+                                                <label class="uncheckedType1" for="gateway6"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway6">BRGW-3-452</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">06/09/2021</div>
+                                        </div>
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway7" class="checkbox">
+                                                <label class="uncheckedType1" for="gateway7"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway7">BRGW-2-341</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">09/09/2021</div>
+                                        </div>
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway8" class="checkbox">
+                                                <label class="uncheckedType1" for="gateway8"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway8">BRGW-I-874</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">08/09/2021</div>
+                                        </div>
+                                        <div class="gatewayBody d-flex justify-content-between me-3">
+                                            <div class="gatewayCheck d-flex align-items-center">
+                                                <input type="checkbox" name="gateway" id="gateway9" class="checkbox">
+                                                <label class="uncheckedType1" for="gateway9"></label>
+                                                <label class="gatewayNames bodygatewayNames ms-3" for="gateway9">BRGW-I-431</label>
+                                            </div>
+                                            <div class="expiryTime pe-5">05/09/2021</div>
+                                        </div>
+                                    </div>
+                                    <div class="saveBtnDiv mt-3 d-flex justify-content-center">
+                                        <button type="button" class="commonBtn saveBtn">Save & Continue</button>
+                                    </div>
+                                </div>
+                            </div>                    
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+                                <div class="summaryBox me-3 p-3">
+                                    <div class="innerHeader d-flex justify-content-between mb-3">Summary 
+                                        <img src="./images/Dotted Hambarekar.svg" alt="Action" class="boxHambarekar">
+                                    </div>
+                                    <div class="summaryContentOuter">
+                                        <div class="summaryContentBox d-flex px-3 py-2 mb-3">
+                                            <div class="summaryIcon smryIcon1 me-3"></div>
+                                            <div class="summaryDetails">
+                                                <div class="summaryValue mb-1">10.0.10.10</div>
+                                                <div class="summaryField">Host Name</div>
+                                            </div>
+                                        </div>
+                                        <div class="summaryContentBox d-flex px-3 py-2 mb-3">
+                                            <div class="summaryIcon smryIcon2 me-3"></div>
+                                            <div class="summaryDetails">
+                                                <div class="summaryValue mb-1">Not Configured</div>
+                                                <div class="summaryField">Host Name</div>
+                                            </div>
+                                        </div>
+                                        <div class="summaryContentBox d-flex px-3 py-2 mb-3">
+                                            <div class="summaryIcon smryIcon3 me-3"></div>
+                                            <div class="summaryDetails">
+                                                <div class="summaryValue mb-1">Not Configured</div>
+                                                <div class="summaryField">Host Name</div>
+                                            </div>
+                                        </div>
+                                        <div class="summaryContentBox d-flex px-3 py-2 mb-3">
+                                            <div class="summaryIcon smryIcon4 me-3"></div>
+                                            <div class="summaryDetails">
+                                                <div class="summaryValue mb-1">Alpha-GW.infovision.io</div>
+                                                <div class="summaryField">FQDN</div>
+                                            </div>
+                                        </div>
+                                        <div class="summaryContentBox d-flex px-3 py-2 mb-3">
+                                            <div class="summaryIcon smryIcon5 me-3"></div>
+                                            <div class="summaryDetails">
+                                                <div class="summaryValue mb-1">4.3.1.1_1</div>
+                                                <div class="summaryField">Version</div>
+                                            </div>
+                                        </div>
+                                        <div class="summaryContentBox d-flex px-3 py-2 mb-3">
+                                            <div class="summaryIcon smryIcon6 me-3"></div>
+                                            <div class="summaryDetails">
+                                                <div class="summaryValue mb-1">35 hrs,20 min, 44 sec</div>
+                                                <div class="summaryField">Uptime</div>
+                                            </div>
+                                        </div>
+                                        <div class="expiryOuterBox">
+                                            <div class="summaryContentBox expiryBox px-4 py-3 mb-3">
+                                                <div class="summaryIcon smryIcon7 me-3"></div>
+                                                <div class="summaryDetails">
+                                                    <div class="summaryValue expiryValue mb-1">Fri,Aug 25,2022 03:15:25 PM</div>
+                                                    <div class="summaryField">Gateway Certificate Expiry</div>
+                                                </div>
+                                            </div>
+                                            <div class="summaryContentBox expiryHover p-4">
+                                                <div class="gatewayCertificate mb-1">Gateway Certificate</div>
+                                                <div class="expiryDay">Expiry 30 Days More...</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                    
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="servicesBox p-3">
+                                    <div class="innerHeader d-flex justify-content-between mb-3">Services 
+                                        <img src="./images/Dotted Hambarekar.svg" alt="Action" class="boxHambarekar">
+                                    </div>
+                                    <div class="servicesContentOuter">
+                                        <div class="servicesContentBox p-3 d-flex mb-3">
+                                            <div class="enabledIcon serviceIconMain me-3"></div>
+                                            <div class="serviceDetails">
+                                                <div class="serviceValue enabledValue mb-1">Enabled</div>
+                                                <div class="serviceField">Distributed Processing</div>
+                                            </div>
+                                        </div>
+                                        <div class="servicesContentBox p-3 d-flex mb-3">
+                                            <div class="disabledIcon serviceIconMain me-3"></div>
+                                            <div class="serviceDetails">
+                                                <div class="serviceValue mb-1">Disabled</div>
+                                                <div class="serviceField">Publisher</div>
+                                            </div>
+                                        </div>
+                                        <div class="servicesContentBox p-3 d-flex mb-3">
+                                            <div class="enabledIcon serviceIconMain me-3"></div>
+                                            <div class="serviceDetails">
+                                                <div class="serviceValue enabledValue mb-1">Enabled</div>
+                                                <div class="serviceField">Subscriber</div>
+                                            </div>
+                                        </div>
+                                        <div class="servicesContentBox p-3 d-flex mb-3">
+                                            <div class="enabledIcon serviceIconMain me-3"></div>
+                                            <div class="serviceDetails">
+                                                <div class="serviceValue enabledValue mb-1">Enabled</div>
+                                                <div class="serviceField">Layer3</div>
+                                            </div>
+                                        </div>
+                                        <div class="servicesContentBox p-3 d-flex mb-3">
+                                            <div class="disabledIcon serviceIconMain me-3"></div>
+                                            <div class="serviceDetails">
+                                                <div class="serviceValue mb-1">Disabled</div>
+                                                <div class="serviceField">IAS</div>
+                                            </div>
+                                        </div>
+                                        <div class="servicesContentBox p-3 d-flex mb-3">
+                                            <div class="disabledIcon serviceIconMain me-3"></div>
+                                            <div class="serviceDetails">
+                                                <div class="serviceValue mb-1">Disabled</div>
+                                                <div class="serviceField">Remote Keying</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footerInner d-flex align-items-center justify-content-end pe-3">
+            © 2022 Bluearmor | All Rights Reserved
+        </div>
+    </footer>
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jQuery/bluearmor.js"></script>
+</body>
+</html>

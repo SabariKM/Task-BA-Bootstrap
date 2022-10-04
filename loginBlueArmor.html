@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./owncss/loginStyle.css">
+    <title>Login BlueArmor</title>
+</head>
+<body class="m-0 bg-white">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="loginOuter col-12">
+                <div class="col-12 d-flex justify-content-around gx-5">
+                    <div class="loginScreen col-md-3 col-12">
+                        <div class="loginHeader p-4">
+                            <img src="./images/MicrosoftTeams-image (6) 1.svg" alt="BlueArmor" class="logo-1">
+                            <div class="innerLoginHeader">Please login to your account</div>
+                        </div>
+                        <div class="loginFormOuter d-flex flex-column align-items-start mt-5">
+                            <div class="loginFormInner">
+                                <form action="" class="loginForm d-flex flex-column align-items-center ">
+                                    <div class="formList d-flex flex-column mb-3 px-3">
+                                        <label for="username">Username </label>
+                                        <input type="text" id="username" placeholder="Enter Username..." class="inputField username" required>
+                                    </div>
+                                    <div class="formList d-flex flex-column mb-3 px-3">
+                                        <label for="password">Password </label>
+                                        <input type="password" id="password" placeholder="Enter Your Password..." class="inputField passwordLogin" required>                        
+                                        <a href="./forgetPassword.html" class="forgetPassword pt-2 text-end">Forgot your password?</a>
+                                    </div>
+                                    <div class="login mt-2">
+                                        <a href="./bluearmor2.html" class="loginButton">
+                                            <button class="loginBtn" type="button">Login</button>
+                                        </a>                        
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="registerGrp ms-5 mt-5 text-center">
+                                Don't have an account? <a href="#" class="register">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="innerImg d-none d-md-block col-0 col-md-6">
+                        <img src="./images/Cyber_Security-copy-2-1.png" alt="CyberSecurity" class="mt-5">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-bg"></div>
+        </div>
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/bluearmor.js"></script>
+</body>
+</html>
